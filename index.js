@@ -3,6 +3,7 @@ const cors = require('cors')
 const mysql = require('mysql2')
 require('dotenv').config()
 const app = express()
+const port = process.env.PORT || 3000
 
 app.use(cors())
 app.use(express.json())
@@ -101,7 +102,7 @@ app.delete('/users', (req, res) => {
     )
 })
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(port, () => {
     console.log('CORS-enabled web server listening on port 3000')
 })
 
