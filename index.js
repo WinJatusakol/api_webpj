@@ -62,7 +62,7 @@ app.get('/users', (req, res) => {
     )
 })
 
-app.get('/users/:id', (req, res) => {
+app.get('/users', (req, res) => {
     const id = req.params.id;
     connection.query(
         'SELECT * FROM users WHERE id = ?', [id],
@@ -103,6 +103,6 @@ app.delete('/users', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('CORS-enabled web server listening on port 3000')
+    console.log(`Server is running on port ${port}`)
 })
 
